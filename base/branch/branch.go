@@ -23,7 +23,7 @@ func grade(score int) string {
 }
 
 func main() {
-	const filename = "static/test_1.txt"
+	const filename = "./static/test_1.txt"
 	if contents, err := ioutil.ReadFile(filename); err != nil {
 		fmt.Println(err)
 	} else {

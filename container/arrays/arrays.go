@@ -20,5 +20,4 @@ func main() {
 	printArray(&arr1)
 	printArray(&arr3)
 	fmt.Println(arr1)
-
 }

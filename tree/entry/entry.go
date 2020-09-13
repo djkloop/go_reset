@@ -34,7 +34,7 @@ func main() {
 	root = tree.Node{Value: 3}
 	root.Left = &tree.Node{}
 	root.Right = &tree.Node{
-		Value: 5,
+		Value: 100,
 	}
 	root.Right.Left = new(tree.Node)
 	root.Left.Right = tree.CreateNode(2)
@@ -47,4 +47,13 @@ func main() {
 		nodeCount++
 	})
 	fmt.Println("Node count:", nodeCount)
+
+	c := root.TraverseWithChannel()
+	maxNode := 0
+	for node := range c {
+		if node.Value > maxNode {
+			maxNode = node.Value
+		}
+	}
+	fmt.Println("Max node value: ", maxNode)
 }
